@@ -1,8 +1,12 @@
 # air_monitor_dcf77_clock
 
 
-Combination of air monitor that shows a VOC index, humidity and temperature, and a clock that uses a DCF77 module to receive the current time from Frankfurt, when the device is started. 
-A LED is used to show the DCF77 communication at start (display is turned off until the time was received, the signal will be disturbed by I2C bus).
+Combination of an air monitor and a clock:  
+- Air monitor shows a VOC index, humidity and temperature values.   
+- The clock uses a DCF77 module to receive the current time from Frankfurt, when the device is started.
+
+
+A LED is used to show the DCF77 communication at start (display is turned off until the time was received, the signal will be disturbed by I2C bus).  
 A switch is used to toggle the display view.
 
 
