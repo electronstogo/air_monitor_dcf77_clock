@@ -174,5 +174,4 @@ void loop()
 		SMCR |= (1 << 2);
 		sleep_cpu();
     }
-
 }
