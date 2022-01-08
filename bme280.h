@@ -36,7 +36,6 @@ class BME280
 
 		int32_t t_fine;
 
-
 		void get_adjustment();
 		int32_t calculate_temperature(int32_t adc_temperature);
 		uint32_t calculate_pressure(uint32_t adc_pressure);
