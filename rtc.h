@@ -9,8 +9,8 @@
 
 class RTC
 {
-	public:
-		static const char* day_names[7];
+    public:
+        static const char* day_names[7];
 
         uint16_t year;
         uint16_t month;
