@@ -10,15 +10,15 @@ DCF77::DCF77()
 {
 	// Configurate the DCF77 pins.
 	pinMode(DCF77_DATA_PIN, INPUT);
-    pinMode(DCF77_ENABLE_PIN, OUTPUT);
+	pinMode(DCF77_ENABLE_PIN, OUTPUT);
 
-    // Activate the pull up. DCF77 signal comes from a open collector output.
-    digitalWrite(DCF77_DATA_PIN, HIGH);
+	// Activate the pull up. DCF77 signal comes from a open collector output.
+	digitalWrite(DCF77_DATA_PIN, HIGH);
 
-    // Activate the DCF77 module.
-    digitalWrite(DCF77_ENABLE_PIN, HIGH);
-    delay(100);
-    digitalWrite(DCF77_ENABLE_PIN, LOW);
+	// Activate the DCF77 module.
+	digitalWrite(DCF77_ENABLE_PIN, HIGH);
+	delay(100);
+	digitalWrite(DCF77_ENABLE_PIN, LOW);
 }
 
 
@@ -73,7 +73,7 @@ bool DCF77::syncronize_time()
 	// Timestamp for calculation of waiting time.
 	uint32_t signal_timestamp;
 
-    while(true)
+    	while(true)
 	{
 
 		// Wait for next DCF77 signal.
