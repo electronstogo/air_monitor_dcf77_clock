@@ -19,9 +19,8 @@
 // External interrupt from RTC 1Hz signal.
 ISR(INT1_vect)
 {
-	// Just wake up controller.
+    // Just wake up controller.
 }
-
 
 
 
@@ -31,11 +30,11 @@ void setup()
     cli();
 
     // Enable external interrupt rising edge at INT1 pin
-	EICRA |= 0x0C;
-	// Activate extern interrupt INT1
-	EIMSK = 0x02;
-	// Reset both extern interrupt flags.
-	EIFR  = 0x03;
+    EICRA |= 0x0C;
+    // Activate extern interrupt INT1
+    EIMSK = 0x02;
+    // Reset both extern interrupt flags.
+    EIFR  = 0x03;
 
 
     // Button for display view switch
@@ -45,6 +44,7 @@ void setup()
 
     // Communication LED.
     pinMode(LED_PIN, OUTPUT);
+
 
     // Enable interrupts
     sei();
@@ -139,8 +139,8 @@ void loop()
             case 1:
                 // Print date.
                 sprintf(string, "%i%i.%i%i.%i%i", rtc.day_of_month / 10, rtc.day_of_month % 10,
-                                            rtc.month / 10, rtc.month % 10,
-                                            rtc.year / 10, rtc.month % 10);
+                                                rtc.month / 10, rtc.month % 10,
+                                                rtc.year / 10, rtc.month % 10);
                 sh1106.draw_string(0, 55, string);
 
                 // Print time.
@@ -168,9 +168,10 @@ void loop()
             active_screen = ! active_screen;
         }
 
-		// Enter sleep mode, RTC 1Hz trigger wakes up controller.
-		SMCR |= (1 << 0);
-		SMCR |= (1 << 2);
-		sleep_cpu();
+        // Enter sleep mode, RTC 1Hz trigger wakes up controller.
+        SMCR |= (1 << 0);
+        SMCR |= (1 << 2);
+        sleep_cpu();
     }
+
 }
