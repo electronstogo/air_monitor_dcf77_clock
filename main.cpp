@@ -46,7 +46,6 @@ void setup()
     // Communication LED.
     pinMode(LED_PIN, OUTPUT);
 
-
     // Enable interrupts
     sei();
 }
