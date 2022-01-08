@@ -29,7 +29,6 @@ BME280::BME280()
 
     Wire.endTransmission();
 
-
     // Get adjustment parameters from memory.
     this->get_adjustment();
 
