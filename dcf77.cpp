@@ -73,7 +73,7 @@ bool DCF77::syncronize_time()
 	// Timestamp for calculation of waiting time.
 	uint32_t signal_timestamp;
 
-    	while(true)
+    while(true)
 	{
 
 		// Wait for next DCF77 signal.
