@@ -1,31 +1,36 @@
-#ifndef DCF77_H_
-#define DCF77_H_
+#ifndef RTC_H_
+#define RTC_H_
 
-#include <Arduino.h>
+#include <Wire.h>
 
-#define DCF77_DATA_PIN		2
-#define DCF77_ENABLE_PIN	4
-
+#define RTC_I2C_ADDRESS 0x68
 
 
-class DCF77
+
+class RTC
 {
-    private:
-        void calculate_time_from_dcf77_data(uint8_t* dcf_data, uint32_t last_signal_timestamp);
-        void handle_dcf_signal(int16_t signal_low_time, uint16_t* dcf_data_index, uint8_t* dcf_data);
-        uint8_t get_bit_value(uint8_t *data, uint16_t index);
-
     public:
-        DCF77();
-        bool syncronize_time();
-        uint8_t minutes;
-        uint8_t hours;
-        uint8_t week_day;
-        uint8_t day_of_month;
-        uint8_t month;
-        uint8_t year;
-};
+        static const String day_names[7];
+        static const String month_names[12];
 
+        uint16_t year;
+        uint16_t month;
+        uint16_t day_of_month;
+        uint16_t week_day;
+        uint16_t hours;
+        uint16_t minutes;
+        uint16_t seconds;
+
+
+        RTC();
+        void set_data();
+        void update();
+        String get_week_day();
+
+    private:
+        uint8_t bcd_to_dec(uint8_t value);
+        uint8_t dec_to_bcd(uint8_t value);
+};
 
 
 #endif
