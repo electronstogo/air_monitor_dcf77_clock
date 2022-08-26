@@ -1,6 +1,5 @@
 #include "dcf77.h"
 #include "Arduino.h"
-#include <util/delay.h>
 
 
 
@@ -78,7 +77,7 @@ bool DCF77::syncronize_time()
         // Wait for next DCF77 signal.
         while(!dcf_signal_triggered)
         {
-            _delay_ms(1);
+            delay(1);
         }
 
         signal_timestamp = millis();
