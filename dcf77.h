@@ -1,5 +1,3 @@
-#ifndef RTC_H_
-#define RTC_H_
 #ifndef DCF77_H_
 #define DCF77_H_
 
