@@ -10,7 +10,8 @@
 class RTC
 {
     public:
-        static const char* day_names[7];
+        static const String day_names[7];
+        static const String month_names[12];
 
         uint16_t year;
         uint16_t month;
@@ -24,7 +25,11 @@ class RTC
         RTC();
         void set_data();
         void update();
-        uint8_t bcd_to_dec(uint8_t bcd_value);
+        String get_week_day();
+
+    private:
+        uint8_t bcd_to_dec(uint8_t value);
+        uint8_t dec_to_bcd(uint8_t value);
 };
 
 
