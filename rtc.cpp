@@ -48,7 +48,7 @@ void RTC::update()
     Wire.requestFrom(RTC_I2C_ADDRESS, 7);
     seconds = bcd_to_dec(Wire.read() & 0x7F);
     minutes = bcd_to_dec(Wire.read() & 0x7F);
-    hours = bcd_to_dec(Wire.read() & 0x1F);
+    hours = bcd_to_dec(Wire.read() & 0x3F);
     week_day = bcd_to_dec(Wire.read() & 0x7);
     day_of_month = bcd_to_dec(Wire.read() & 0x3F);
     month = bcd_to_dec(Wire.read() & 0x1F);
